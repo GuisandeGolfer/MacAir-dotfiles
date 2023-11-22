@@ -115,6 +115,7 @@ alias ll="exa -l -g --icons"
 alias icloud="cd /Users/diegoguisande/Library/Mobile\ Documents/com~apple~CloudDocs"
 alias obsidian="cd /Users/diegoguisande/Library/Mobile\ Documents/iCloud~md~obsidian/Documents"
 alias karabiner="nvim /Users/diegoguisande/.config/karabiner/karabiner.json"
+
 function cdls() {
   builtin cd "$@" && ll
 }
@@ -129,10 +130,13 @@ alias gits="git status"
 alias gitadd="git add ."
 alias gitcommit="git commit -m $1"
 alias push2gh="git push -u origin main"
+
+# Script Aliases
+alias stenog="python ~/Desktop/PARA/Projects\ 1/Programming/steganography/van-gonography/src/VanGonography.py" 
 # ENV variables for cs50 c compilation on Mac M1
-CC="clang"
-CFLAGS="-ferror-limit=1 -gdwarf-4 -ggdb3 -O0 -std=c11 -Wall -Werror -Wextra -Wno-gnu-folding-constant -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wshadow"
-LDLIBS="-lcrypt -lcs50 -lm"
+# CC="clang"
+# CFLAGS="-ferror-limit=1 -gdwarf-4 -ggdb3 -O0 -std=c11 -Wall -Werror -Wextra -Wno-gnu-folding-constant -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wshadow"
+# LDLIBS="-lcrypt -lcs50 -lm"
 
 alias nhelp="nvim /Users/diegoguisande/.config/nvim/lua/diego/core/keymaps.lua"
 
