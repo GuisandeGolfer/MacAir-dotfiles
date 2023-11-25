@@ -111,7 +111,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 bindkey -v
-alias ll="exa -l -g --icons"
+alias ll="exa -la -g --icons"
 alias icloud="cd /Users/diegoguisande/Library/Mobile\ Documents/com~apple~CloudDocs"
 alias obsidian="cd /Users/diegoguisande/Library/Mobile\ Documents/iCloud~md~obsidian/Documents"
 alias karabiner="nvim /Users/diegoguisande/.config/karabiner/karabiner.json"
@@ -120,7 +120,7 @@ function cdls() {
   builtin cd "$@" && ll
 }
 alias cd="cdls"
-alias lla="ll -a"
+alias la="ll -a"
 alias desk="cd ~/Desktop/"
 alias para="cd ~/Desktop/PARA/"
 alias newalias="nvim ~/.zshrc"
