@@ -93,11 +93,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='nvim'
+ else
+   export EDITOR='vim'
+ fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -124,6 +124,7 @@ alias la="ll -a"
 alias desk="cd ~/Desktop/"
 alias para="cd ~/Desktop/PARA/"
 alias newalias="nvim ~/.zshrc"
+alias dotfiles="nvim ~/.dotfiles"
 alias src="source ~/.zshrc"
 alias cl="clear"
 alias gits="git status"
