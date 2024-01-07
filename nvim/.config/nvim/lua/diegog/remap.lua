@@ -4,6 +4,9 @@ vim.keymap.set("i", "lk", "<Esc>")
 
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
+
+vim.keymap.set("n", "<leader>o", "!open %<CR>")
+
 vim.keymap.set("n", "<leader>fx", ":!chmod +x %<CR>")
 
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>")
