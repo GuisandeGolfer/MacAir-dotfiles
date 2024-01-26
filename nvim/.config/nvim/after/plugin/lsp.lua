@@ -2,7 +2,7 @@ local lsp = require('lsp-zero')
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'eslint', 'rust_analyzer', 'sumneko_lua'},
+  ensure_installed = {'eslint', 'rust_analyzer' },
   handlers = {
     lsp.default_setup,
     lua_ls = function()
