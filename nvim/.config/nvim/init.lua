@@ -6,6 +6,8 @@ local opt = vim.opt
 opt.relativenumber = true
 opt.number = true
 
+opt.conceallevel = 2
+
 opt.wrap = false
 
 --tabs & indentation

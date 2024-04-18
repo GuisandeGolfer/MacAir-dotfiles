@@ -4,6 +4,7 @@ vim.keymap.set("i", "lk", "<Esc>")
 
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
+vim.keymap.set("n", "<leader>g", ":!go run %<CR>")
 
 vim.keymap.set("n", "<leader>o", "!open %<CR>")
 
@@ -40,4 +41,19 @@ vim.keymap.set("n", "<leader>tx", ":tabclose<CR>") -- T-ab X-close: close curren
 vim.keymap.set("n", "<leader>tn", ":tabn<CR>") -- T-ab N-ext: go to next tab
 vim.keymap.set("n", "<leader>tp", ":tabp<CR>") -- T-ab P-revious: go to previous tab
 
+-- FTerm
+
+vim.keymap.set("n", "<leader>tt", ":lua require('FTerm').toggle()<CR>", {noremap=true})
+
 -- tmux split window navigation --> CTRL + J (UP) + K (DOWN) + L(RIGHT) + H(LEFT)
+--
+--vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+
+-- vim.keymap.set('n', '<C-p>', builtin.git_files, {})
+--
+-- vim.keymap.set('n', '<leader>ps', function()
+-- 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
+-- end)
+-- vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
+--
+-- These are actually very useful ^

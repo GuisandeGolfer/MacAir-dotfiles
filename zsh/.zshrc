@@ -131,9 +131,12 @@ alias gits="git status"
 alias gitadd="git add ."
 alias gitcommit="git commit -m $1"
 alias push2gh="git push -u origin main"
+alias whisper="~/Desktop/PARA/Projects_1/AI-text/whisper.cpp/"
+alias hidden="ls -a | grep '^\.'"
+alias pass="PASSWORD_STORE_ENABLE_EXTENSIONS=true PASSWORD_STORE_EXTENSIONS_DIR='/opt/homebrew/Cellar/pass-import/3.5' pass"
 
 # Script Aliases
-alias stenog="python ~/Desktop/PARA/Projects\ 1/Programming/steganography/van-gonography/src/VanGonography.py" 
+alias stenog="python ~/Desktop/PARA/Projects_1/Programming/steganography/van-gonography/src/VanGonography.py" 
 # ENV variables for cs50 c compilation on Mac M1
 # CC="clang"
 # CFLAGS="-ferror-limit=1 -gdwarf-4 -ggdb3 -O0 -std=c11 -Wall -Werror -Wextra -Wno-gnu-folding-constant -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wshadow"

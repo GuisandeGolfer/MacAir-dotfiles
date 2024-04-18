@@ -1,9 +1,46 @@
+-- update Packer: 
+-- :so
+-- :PackerSync
+
+-- update treesitter
+-- :TSUpdate
+
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+
+  -- obsidian plugin
+  --
+  use({
+      "epwalsh/obsidian.nvim",
+      tag = "*",  -- recommended, use latest release instead of latest commit
+      requires = {
+          -- Required.
+          "nvim-lua/plenary.nvim",
+
+          -- see below for full list of optional dependencies 👇
+      },
+      config = function()
+          require("obsidian").setup({
+              workspaces = {
+                  {
+                      name = "personal",
+                      path = "/Users/diegoguisande/Library/Mobile Documents/iCloud~md~obsidian/Documents",
+                  },
+              },
+          })
+      end,
+  })
+
+  -- floating terminal
+  use "numToStr/FTerm.nvim"
+
+  --zen mode
+
+  use "folke/zen-mode.nvim"
 
   -- fun utilities
   use("numToStr/Comment.nvim")
@@ -19,7 +56,7 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use({ 
+  use({
       "catppuccin/nvim",
       as = "catppuccin",
       config = function()
