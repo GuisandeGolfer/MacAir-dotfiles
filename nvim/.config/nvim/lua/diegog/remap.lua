@@ -2,7 +2,9 @@ vim.g.mapleader = " "
 
 vim.keymap.set("i", "lk", "<Esc>")
 
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+
 
 vim.keymap.set("n", "<leader>g", ":!go run %<CR>")
 

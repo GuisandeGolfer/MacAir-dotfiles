@@ -120,6 +120,7 @@ function cdls() {
   builtin cd "$@" && ll
 }
 alias cd="cdls"
+alias ex="exit"
 alias la="ll -a"
 alias desk="cd ~/Desktop/"
 alias para="cd ~/Desktop/PARA/"

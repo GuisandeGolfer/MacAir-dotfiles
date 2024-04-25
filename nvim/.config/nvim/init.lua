@@ -8,7 +8,7 @@ opt.number = true
 
 opt.conceallevel = 2
 
-opt.wrap = false
+opt.wrap = true
 
 --tabs & indentation
 opt.tabstop = 4

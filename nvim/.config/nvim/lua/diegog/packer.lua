@@ -12,6 +12,12 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  use ({
+      'nvim-tree/nvim-tree.lua',
+      requires = {
+          'nvim-tree/nvim-web-devicons', -- optional
+      },
+  })
   -- obsidian plugin
   --
   use({
@@ -44,7 +50,6 @@ return require('packer').startup(function(use)
 
   -- fun utilities
   use("numToStr/Comment.nvim")
-  use("nvim-tree/nvim-tree.lua")
 
   use("windwp/nvim-autopairs")
 
