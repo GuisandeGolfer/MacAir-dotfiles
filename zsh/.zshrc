@@ -81,7 +81,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search pass)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -113,7 +113,7 @@ if [[ -n $SSH_CONNECTION ]]; then
 bindkey -v
 alias ll="exa -la -g --icons"
 alias icloud="cd /Users/diegoguisande/Library/Mobile\ Documents/com~apple~CloudDocs"
-alias obsidian="cd /Users/diegoguisande/Library/Mobile\ Documents/iCloud~md~obsidian/Documents"
+alias obsidian="cd /Users/diegoguisande/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Second\ Brain/PARA"
 alias karabiner="nvim /Users/diegoguisande/.config/karabiner/karabiner.json"
 
 function cdls() {
@@ -133,6 +133,14 @@ alias gitadd="git add ."
 alias gitcommit="git commit -m $1"
 alias push2gh="git push -u origin main"
 alias whisper="~/Desktop/PARA/Projects_1/AI-text/whisper.cpp/"
+
+function gptsum_func() {
+    source ~/Desktop/PARA/Projects_1/AI-text/transcribe-mp3/youtube_summary_py/env/bin/activate
+    export OPENAI_API_KEY=$(pass show api/chatgpt)
+    python3 ~/Desktop/PARA/Projects_1/AI-text/transcribe-mp3/youtube_summary_py/main.py
+}
+
+alias gptsum="gptsum_func"
 alias hidden="ls -a | grep '^\.'"
 alias pass="PASSWORD_STORE_ENABLE_EXTENSIONS=true PASSWORD_STORE_EXTENSIONS_DIR='/opt/homebrew/Cellar/pass-import/3.5' pass"
 
@@ -167,3 +175,20 @@ JUPYTER_CONFIG_PATH="/opt/homebrew/etc/jupyter"
 
 GOKU_EDN_CONFIG_FILE="~/.config/karabiner.edn"
 
+eval "$(fzf --zsh)" 
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/diegoguisande/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/diegoguisande/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/diegoguisande/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/diegoguisande/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+neofetch

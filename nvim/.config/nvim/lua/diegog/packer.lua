@@ -12,6 +12,12 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  use({
+      "L3MON4D3/LuaSnip",
+      tag = "v2.*",
+      run = "make install_jsregexp"
+  })
+
   use ({
       'nvim-tree/nvim-tree.lua',
       requires = {
@@ -34,7 +40,7 @@ return require('packer').startup(function(use)
               workspaces = {
                   {
                       name = "personal",
-                      path = "/Users/diegoguisande/Library/Mobile Documents/iCloud~md~obsidian/Documents",
+                      path = "/Users/diegoguisande/Library/Mobile Documents/iCloud~md~obsidian/Documents/Second Brain/PARA",
                   },
               },
           })
