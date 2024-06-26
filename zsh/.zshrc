@@ -134,6 +134,15 @@ alias gitcommit="git commit -m $1"
 alias push2gh="git push -u origin main"
 alias whisper="~/Desktop/PARA/Projects_1/AI-text/whisper.cpp/"
 
+function youtube_rss() {
+    youtube_url=$1
+    echo "Processing YouTube URL: $youtube_url"
+    # Add your logic here to process the YouTube URL
+    curl -s "$youtube_url" | xmllint --html --xpath "string(//link[@title='RSS']/@href)" - 2>/dev/null
+}
+
+alias rss="youtube_rss"
+
 function gptsum_func() {
     source ~/Desktop/PARA/Projects_1/AI-text/transcribe-mp3/youtube_summary_py/env/bin/activate
     export OPENAI_API_KEY=$(pass show api/chatgpt)

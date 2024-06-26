@@ -32,7 +32,6 @@ return require('packer').startup(function(use)
       requires = {
           -- Required.
           "nvim-lua/plenary.nvim",
-
           -- see below for full list of optional dependencies 👇
       },
       config = function()
@@ -43,6 +42,19 @@ return require('packer').startup(function(use)
                       path = "/Users/diegoguisande/Library/Mobile Documents/iCloud~md~obsidian/Documents/Second Brain/PARA",
                   },
               },
+
+              ---@param url string
+              follow_url_func = function(url)
+            -- Open the URL in the default web browser.
+                  vim.fn.jobstart({"open", url})  -- Mac OS
+              end,
+
+              new_notes_location = "current_dir",
+
+              daily_notes = {
+                  folder = "Areas/DailyNotes",
+                  template = "Daily Note Template"
+              }
           })
       end,
   })
