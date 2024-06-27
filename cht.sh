@@ -1,6 +1,7 @@
-#!/bin/zsh
-#
-selected=`cat ~/.tmux-cht-languages ~/.tmux-cht-command | fzf`
+#!/bin/bash
+
+
+selected=`cat ~/.dotfiles/tmux/.tmux-cht-languages ~/.dotfiles/tmux/.tmux-cht-command | fzf`
 if [[ -z $selected ]]; then
     exit 0
 fi

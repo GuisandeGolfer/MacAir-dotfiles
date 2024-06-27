@@ -160,7 +160,7 @@ alias stenog="python ~/Desktop/PARA/Projects_1/Programming/steganography/van-gon
 # CFLAGS="-ferror-limit=1 -gdwarf-4 -ggdb3 -O0 -std=c11 -Wall -Werror -Wextra -Wno-gnu-folding-constant -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wshadow"
 # LDLIBS="-lcrypt -lcs50 -lm"
 
-alias nhelp="nvim /Users/diegoguisande/.config/nvim/lua/diego/core/keymaps.lua"
+alias nhelp="nvim $HOME/.dotfiles/nvim/.config/nvim/lua/diegog/remap.lua"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
