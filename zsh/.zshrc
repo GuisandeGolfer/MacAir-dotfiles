@@ -133,6 +133,7 @@ alias gitadd="git add ."
 alias gitcommit="git commit -m $1"
 alias push2gh="git push -u origin main"
 alias whisper="~/Desktop/PARA/Projects_1/AI-text/whisper.cpp/"
+alias s="fd --type f --hidden --exclude .git | fzf-tmux --reverse -p | xargs nvim"
 
 function youtube_rss() {
     youtube_url=$1
@@ -144,9 +145,8 @@ function youtube_rss() {
 alias rss="youtube_rss"
 
 function gptsum_func() {
-    source ~/Desktop/PARA/Projects_1/AI-text/transcribe-mp3/youtube_summary_py/env/bin/activate
-    export OPENAI_API_KEY=$(pass show api/chatgpt)
-    python3 ~/Desktop/PARA/Projects_1/AI-text/transcribe-mp3/youtube_summary_py/main.py
+    source ~/Desktop/PARA/Projects_1/youtube_summary_py/venv/bin/activate
+    python3 ~/Desktop/PARA/Projects_1/youtube_summary_py/main.py
 }
 
 alias gptsum="gptsum_func"
