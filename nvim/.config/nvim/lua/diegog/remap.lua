@@ -2,6 +2,9 @@ vim.g.mapleader = " "
 
 vim.keymap.set("i", "lk", "<Esc>")
 
+-- show this file for keymap help
+
+vim.keymap.set("n", "<leader>h", ":tabnew nvim/.config/nvim/lua/diegog/remap.lua<CR>")
 
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
