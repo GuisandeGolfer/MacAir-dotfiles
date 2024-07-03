@@ -133,7 +133,7 @@ alias gitadd="git add ."
 alias gitcommit="git commit -m $1"
 alias push2gh="git push -u origin main"
 alias whisper="~/Desktop/PARA/Projects_1/AI-text/whisper.cpp/"
-alias s="fd --type f --hidden --exclude .git | fzf-tmux --reverse -p | xargs nvim"
+alias s="fd --type f --hidden --exclude .git | fzf-tmux --reverse -p | xargs -I {} nvim '{}'"
 
 function youtube_rss() {
     youtube_url=$1
@@ -200,4 +200,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-neofetch
