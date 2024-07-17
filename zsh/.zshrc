@@ -188,7 +188,7 @@ JUPYTER_CONFIG_PATH="/opt/homebrew/etc/jupyter"
 
 GOKU_EDN_CONFIG_FILE="~/.config/karabiner.edn"
 
-eval "$(fzf --zsh)" 
+source <(fzf --zsh)
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
