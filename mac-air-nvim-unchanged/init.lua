@@ -1,5 +1,3 @@
-require("diegog")
-require("diegog.remap")
 
 local opt = vim.opt
 
@@ -24,9 +22,9 @@ opt.smartcase = true
 opt.cursorline = true
 
 -- appearance
---opt.termguicolors = true
---opt.background = "dark"
---opt.signcolumn = "yes"
+opt.termguicolors = true
+opt.background = "dark"
+opt.signcolumn = "yes"
 
 -- backspace
 opt.backspace = "indent,eol,start"
