@@ -8,6 +8,8 @@ fi
 export PATH="/opt/homebrew/Cellar/node/22.4.0/bin:$PATH"
 
 export PATH="$(brew --prefix)/opt/python@3/libexec/bin:$PATH"
+export PATH="/usr/local/Cellar/mpv/0.38.0_2/bin:$PATH"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export NVM_DIR="$HOME/.nvim"
@@ -113,7 +115,7 @@ if [[ -n $SSH_CONNECTION ]]; then
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 bindkey -v
-alias ll="exa -la -g --icons"
+alias ll="ls -la"
 alias icloud="cd /Users/diegoguisande/Library/Mobile\ Documents/com~apple~CloudDocs"
 alias obsidian="cd /Users/diegoguisande/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Second\ Brain/PARA"
 alias karabiner="nvim /Users/diegoguisande/.config/karabiner/karabiner.json"

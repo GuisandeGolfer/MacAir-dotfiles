@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Fetch the current UTC time from a time server
-current_time=$(curl -s --head http://worldtimeapi.org/api/timezone/Etc/UTC | grep ^date: | cut -d' ' -f2-)
+current_time=$(curl -s --head http://worldtimeapi.org/api/timezone/America/Los_Angeles | grep ^date: | cut -d' ' -f2-)
 
 # Remove the trailing carriage return, if present
 current_time=${current_time%$'\r'}
