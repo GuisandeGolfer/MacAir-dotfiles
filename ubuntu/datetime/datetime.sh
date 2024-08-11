@@ -13,6 +13,7 @@ iso_time=$(date -j -f "%a, %d %b %Y %H:%M:%S %Z" "$current_time" "+%Y-%m-%dT%H:%
 formatted_time=$(echo $iso_time | sed 's/\([+-][0-9][0-9]\)\([0-9][0-9]\)$/\1:\2/')
 
 # Copy to clipboard
+# TODO: need to update this to switch to 'xclip -selection clipboard' for ubuntu
 echo $formatted_time | pbcopy
 
 # Print the result (optional)
