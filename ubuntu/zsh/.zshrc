@@ -1,15 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-export PATH="/opt/homebrew/Cellar/node/22.4.0/bin:$PATH"
-
-export PATH="$(brew --prefix)/opt/python@3/libexec/bin:$PATH"
-export PATH="/usr/local/Cellar/mpv/0.38.0_2/bin:$PATH"
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export NVM_DIR="$HOME/.nvim"
@@ -18,12 +6,6 @@ export NVM_DIR="$HOME/.nvim"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -116,9 +98,6 @@ if [[ -n $SSH_CONNECTION ]]; then
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 bindkey -v
 alias ll="ls -la"
-alias icloud="cd /Users/diegoguisande/Library/Mobile\ Documents/com~apple~CloudDocs"
-alias obsidian="cd /Users/diegoguisande/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Second\ Brain/PARA"
-alias karabiner="nvim /Users/diegoguisande/.config/karabiner/karabiner.json"
 
 function cdls() {
   builtin cd "$@" && ll
@@ -127,7 +106,6 @@ alias cd="cdls"
 alias ex="exit"
 alias la="ll -a"
 alias desk="cd ~/Desktop/"
-alias para="cd ~/Desktop/PARA/"
 alias newalias="nvim ~/.zshrc"
 alias dotfiles="nvim ~/.dotfiles"
 alias src="source ~/.zshrc"
@@ -136,75 +114,18 @@ alias gits="git status"
 alias gitadd="git add ."
 alias gitcommit="git commit -m $1"
 alias push2gh="git push -u origin main"
-alias whisper="~/Desktop/PARA/Projects_1/AI-text/whisper.cpp/"
 
 alias s="fd --type f --hidden --exclude .git | fzf-tmux --reverse -p | xargs -I {} nvim '{}'"
 alias smv="fd --type f --hidden --exclude .git | fzf-tmux --reverse -p | xargs -I {} mv '{}' $1"
 alias datetime="$HOME/datetime.sh"
 alias gitgraph="git log --all --graph"
 
-function youtube_rss() {
-    youtube_url=$1
-    echo "Processing YouTube URL: $youtube_url"
-    # Add your logic here to process the YouTube URL
-    curl -s "$youtube_url" | xmllint --html --xpath "string(//link[@title='RSS']/@href)" - 2>/dev/null
-}
-
-alias rss="youtube_rss"
-
-function gptsum_func() {
-    source ~/Desktop/PARA/Projects_1/youtube_summary_py/venv/bin/activate
-    python3 ~/Desktop/PARA/Projects_1/youtube_summary_py/main.py
-}
-
-alias gptsum="gptsum_func"
 alias hidden="ls -a | grep '^\.'"
-alias pass="PASSWORD_STORE_ENABLE_EXTENSIONS=true PASSWORD_STORE_EXTENSIONS_DIR='/opt/homebrew/Cellar/pass-import/3.5' pass"
 
-# Script Aliases
-alias stenog="python ~/Desktop/PARA/Projects_1/Programming/steganography/van-gonography/src/VanGonography.py" 
-# ENV variables for cs50 c compilation on Mac M1
-# CC="clang"
-# CFLAGS="-ferror-limit=1 -gdwarf-4 -ggdb3 -O0 -std=c11 -Wall -Werror -Wextra -Wno-gnu-folding-constant -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wshadow"
-# LDLIBS="-lcrypt -lcs50 -lm"
-
-alias nhelp="nvim $HOME/.dotfiles/nvim/.config/nvim/lua/diegog/remap.lua"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# pnpm
-export PNPM_HOME="/Users/diegoguisande/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-# bun completions
-[ -s "/Users/diegoguisande/.bun/_bun" ] && source "/Users/diegoguisande/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-JUPYTER_PATH="/opt/homebrew/share/jupyter/"
-JUPYTER_CONFIG_PATH="/opt/homebrew/etc/jupyter"
-
-GOKU_EDN_CONFIG_FILE="~/.config/karabiner.edn"
+alias nhelp="nvim $HOME/.config/nvim/diegog/core"
 
 source <(fzf --zsh)
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/diegoguisande/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/diegoguisande/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/diegoguisande/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/diegoguisande/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+# source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+eval "$(starship init zsh)"
