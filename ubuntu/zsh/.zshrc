@@ -141,6 +141,7 @@ alias whisper="~/Desktop/PARA/Projects_1/AI-text/whisper.cpp/"
 alias s="fd --type f --hidden --exclude .git | fzf-tmux --reverse -p | xargs -I {} nvim '{}'"
 alias smv="fd --type f --hidden --exclude .git | fzf-tmux --reverse -p | xargs -I {} mv '{}' $1"
 alias datetime="$HOME/datetime.sh"
+alias gitgraph="git log --all --graph"
 
 function youtube_rss() {
     youtube_url=$1
