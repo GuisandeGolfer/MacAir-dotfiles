@@ -2,7 +2,6 @@
 
 set -e
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-INSTALL_JSON=$SCRIPT_DIR/install.json
 PRESENT=false
 
 # Detect the operating system
@@ -46,7 +45,7 @@ fi
 #   esac
 # done
 
-echo "[+] Dotfiles :: $SCRIPT_DIR"
+echo "[+] Dotfiles :: $DOT_FOLDERS_DIR"
 
 if ! command -v stow &> /dev/null; then
     echo "stow is not installed, installing now"
@@ -65,9 +64,9 @@ for folder in "$DOT_FOLDERS_DIR"/*; do
         folder_name=$(basename "$folder")
         echo "[+] Folder :: $folder_name"
 
-        stow -t $HOME -D $folder_name \
+        stow -d "$DOT_FOLDERS_DIR" -t $HOME -D $folder_name \
             --ignore=README.md --ignore=LICENSE
-        stow -t $HOME $folder_name
+        stow -d "$DOT_FOLDERS_DIR" -t $HOME $folder_name
     fi
 done
 

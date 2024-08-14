@@ -6,8 +6,10 @@ vim.keymap.set("i", "lk", "<Esc>")
 
 vim.keymap.set("n", "<leader>h", ":tabnew nvim/.config/nvim/lua/diegog/remap.lua<CR>")
 
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
-
+vim.keymap.set("n", "<leader>ee", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>ec", ":NvimTreeCollapse<CR>")
+vim.keymap.set("n", "<leader>ef", ":NvimTreeFindFileToggle<CR>")
+-- Expand all folders = E (while in nvim-tree)
 
 vim.keymap.set("n", "<leader>g", ":!go run %<CR>")
 

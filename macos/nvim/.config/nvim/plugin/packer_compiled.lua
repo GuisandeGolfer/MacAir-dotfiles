@@ -142,6 +142,7 @@ _G.packer_plugins = {
     url = "https://github.com/kylechui/nvim-surround"
   },
   ["nvim-tree.lua"] = {
+    config = { "\27LJ\2\nw\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\16live_filter\1\0\1\16live_filter\0\1\0\1\24always_show_folders\1\nsetup\14nvim-tree\frequire\0" },
     loaded = true,
     path = "/Users/diegoguisande/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/nvim-tree/nvim-tree.lua"
@@ -157,7 +158,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["obsidian.nvim"] = {
-    config = { "\27LJ\2\n<\0\1\4\0\4\0\a6\1\0\0009\1\1\0019\1\2\0015\3\3\0>\0\2\3B\1\2\1K\0\1\0\1\2\0\0\topen\rjobstart\afn\bvimù\2\1\0\5\0\n\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\0023\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\16daily_notes\1\0\2\rtemplate\24Daily Note Template\vfolder\21Areas/DailyNotes\20follow_url_func\0\15workspaces\1\0\4\15workspaces\0\20follow_url_func\0\16daily_notes\0\23new_notes_location\16current_dir\1\0\2\tname\rpersonal\tpatha/Users/diegoguisande/Library/Mobile Documents/iCloud~md~obsidian/Documents/Second Brain/PARA\nsetup\robsidian\frequire\0" },
+    config = { "\27LJ\2\n<\0\1\4\0\4\0\a6\1\0\0009\1\1\0019\1\2\0015\3\3\0>\0\2\3B\1\2\1K\0\1\0\1\2\0\0\topen\rjobstart\afn\bvimù\2\1\0\5\0\n\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\0023\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\16daily_notes\1\0\2\rtemplate\24Daily Note Template\vfolder\21Areas/DailyNotes\20follow_url_func\0\15workspaces\1\0\4\16daily_notes\0\23new_notes_location\16current_dir\15workspaces\0\20follow_url_func\0\1\0\2\tname\rpersonal\tpatha/Users/diegoguisande/Library/Mobile Documents/iCloud~md~obsidian/Documents/Second Brain/PARA\nsetup\robsidian\frequire\0" },
     loaded = true,
     path = "/Users/diegoguisande/.local/share/nvim/site/pack/packer/start/obsidian.nvim",
     url = "https://github.com/epwalsh/obsidian.nvim"
@@ -207,16 +208,20 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: obsidian.nvim
 time([[Config for obsidian.nvim]], true)
-try_loadstring("\27LJ\2\n<\0\1\4\0\4\0\a6\1\0\0009\1\1\0019\1\2\0015\3\3\0>\0\2\3B\1\2\1K\0\1\0\1\2\0\0\topen\rjobstart\afn\bvimù\2\1\0\5\0\n\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\0023\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\16daily_notes\1\0\2\rtemplate\24Daily Note Template\vfolder\21Areas/DailyNotes\20follow_url_func\0\15workspaces\1\0\4\15workspaces\0\20follow_url_func\0\16daily_notes\0\23new_notes_location\16current_dir\1\0\2\tname\rpersonal\tpatha/Users/diegoguisande/Library/Mobile Documents/iCloud~md~obsidian/Documents/Second Brain/PARA\nsetup\robsidian\frequire\0", "config", "obsidian.nvim")
+try_loadstring("\27LJ\2\n<\0\1\4\0\4\0\a6\1\0\0009\1\1\0019\1\2\0015\3\3\0>\0\2\3B\1\2\1K\0\1\0\1\2\0\0\topen\rjobstart\afn\bvimù\2\1\0\5\0\n\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\0023\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\16daily_notes\1\0\2\rtemplate\24Daily Note Template\vfolder\21Areas/DailyNotes\20follow_url_func\0\15workspaces\1\0\4\16daily_notes\0\23new_notes_location\16current_dir\15workspaces\0\20follow_url_func\0\1\0\2\tname\rpersonal\tpatha/Users/diegoguisande/Library/Mobile Documents/iCloud~md~obsidian/Documents/Second Brain/PARA\nsetup\robsidian\frequire\0", "config", "obsidian.nvim")
 time([[Config for obsidian.nvim]], false)
--- Config for: nvim-surround
-time([[Config for nvim-surround]], true)
-try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
-time([[Config for nvim-surround]], false)
 -- Config for: catppuccin
 time([[Config for catppuccin]], true)
 try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\27colorscheme catppuccin\bcmd\bvim\0", "config", "catppuccin")
 time([[Config for catppuccin]], false)
+-- Config for: nvim-surround
+time([[Config for nvim-surround]], true)
+try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
+time([[Config for nvim-surround]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+try_loadstring("\27LJ\2\nw\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\16live_filter\1\0\1\16live_filter\0\1\0\1\24always_show_folders\1\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
+time([[Config for nvim-tree.lua]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
