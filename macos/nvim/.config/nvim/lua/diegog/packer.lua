@@ -35,6 +35,11 @@ return require('packer').startup(function(use)
       requires = {
           'nvim-tree/nvim-web-devicons', -- optional
       },
+      config = function()
+          require("nvim-tree").setup({
+              -- configuration goes here: find opts with ":h nvim-tree" in neovim
+          })
+      end
   })
   -- obsidian plugin
   --
