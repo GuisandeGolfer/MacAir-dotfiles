@@ -11,10 +11,10 @@ opt.conceallevel = 2
 opt.wrap = true
 
 --tabs & indentation
-opt.tabstop = 4
-opt.shiftwidth = 4
+opt.tabstop = 2
+opt.shiftwidth = 2
 opt.expandtab = true
-opt.expandtab = true
+opt.autoindent = true
 
 -- search settings
 opt.ignorecase = true
@@ -24,9 +24,9 @@ opt.smartcase = true
 opt.cursorline = true
 
 -- appearance
---opt.termguicolors = true
---opt.background = "dark"
---opt.signcolumn = "yes"
+opt.termguicolors = true
+opt.background = "dark"
+opt.signcolumn = "yes"
 
 -- backspace
 opt.backspace = "indent,eol,start"

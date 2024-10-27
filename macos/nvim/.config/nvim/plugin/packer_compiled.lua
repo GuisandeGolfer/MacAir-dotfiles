@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/diegoguisande/.cache/nvim/packer_hererocks/2.1.1720049189/share/lua/5.1/?.lua;/Users/diegoguisande/.cache/nvim/packer_hererocks/2.1.1720049189/share/lua/5.1/?/init.lua;/Users/diegoguisande/.cache/nvim/packer_hererocks/2.1.1720049189/lib/luarocks/rocks-5.1/?.lua;/Users/diegoguisande/.cache/nvim/packer_hererocks/2.1.1720049189/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/diegoguisande/.cache/nvim/packer_hererocks/2.1.1720049189/lib/lua/5.1/?.so"
+local package_path_str = "/Users/diegoguisande/.cache/nvim/packer_hererocks/2.1.1725453128/share/lua/5.1/?.lua;/Users/diegoguisande/.cache/nvim/packer_hererocks/2.1.1725453128/share/lua/5.1/?/init.lua;/Users/diegoguisande/.cache/nvim/packer_hererocks/2.1.1725453128/lib/luarocks/rocks-5.1/?.lua;/Users/diegoguisande/.cache/nvim/packer_hererocks/2.1.1725453128/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/diegoguisande/.cache/nvim/packer_hererocks/2.1.1725453128/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -74,6 +74,12 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["ChatGPT.nvim"] = {
+    config = { "\27LJ\2\n^\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\16api_key_cmd\26pass show api/chatgpt\nsetup\fchatgpt\frequire\0" },
+    loaded = true,
+    path = "/Users/diegoguisande/.local/share/nvim/site/pack/packer/start/ChatGPT.nvim",
+    url = "https://github.com/jackMort/ChatGPT.nvim"
+  },
   ["Comment.nvim"] = {
     loaded = true,
     path = "/Users/diegoguisande/.local/share/nvim/site/pack/packer/start/Comment.nvim",
@@ -100,6 +106,12 @@ _G.packer_plugins = {
     path = "/Users/diegoguisande/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["conform.nvim"] = {
+    config = { "\27LJ\2\n±\5\0\0\5\0\"\0%6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\30\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\0035\4\n\0=\4\v\0035\4\f\0=\4\r\0035\4\14\0=\4\15\0035\4\16\0=\4\17\0035\4\18\0=\4\19\0035\4\20\0=\4\21\0035\4\22\0=\4\23\0035\4\24\0=\4\25\0035\4\26\0=\4\27\0035\4\28\0=\4\29\3=\3\31\0025\3 \0=\3!\2B\0\2\1K\0\1\0\19format_on_save\1\0\3\15lsp_format\rfallback\15timeout_ms\3ô\3\nasync\1\21formatters_by_ft\1\0\2\19format_on_save\0\21formatters_by_ft\0\blua\1\2\0\0\vstylua\fgraphql\1\2\0\0\rprettier\rmarkdown\1\2\0\0\rprettier\tyaml\1\2\0\0\rprettier\tjson\1\2\0\0\rprettier\thtml\1\2\0\0\rprettier\bcss\1\2\0\0\rprettier\vsvelte\1\2\0\0\rprettier\20typescriptreact\1\2\0\0\rprettier\20javascriptreact\1\2\0\0\rprettier\15typescript\1\2\0\0\rprettier\15javascript\1\2\0\0\rprettier\vpython\1\0\r\fgraphql\0\bcss\0\thtml\0\20typescriptreact\0\rmarkdown\0\tyaml\0\20javascriptreact\0\tjson\0\vpython\0\15javascript\0\vsvelte\0\blua\0\15typescript\0\1\2\0\0\rautopep8\nsetup\fconform\frequire\0" },
+    loaded = true,
+    path = "/Users/diegoguisande/.local/share/nvim/site/pack/packer/start/conform.nvim",
+    url = "https://github.com/stevearc/conform.nvim"
+  },
   harpoon = {
     loaded = true,
     path = "/Users/diegoguisande/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -119,6 +131,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/diegoguisande/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/Users/diegoguisande/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -142,7 +159,7 @@ _G.packer_plugins = {
     url = "https://github.com/kylechui/nvim-surround"
   },
   ["nvim-tree.lua"] = {
-    config = { "\27LJ\2\nw\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\16live_filter\1\0\1\16live_filter\0\1\0\1\24always_show_folders\1\nsetup\14nvim-tree\frequire\0" },
+    config = { "\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14nvim-tree\frequire\0" },
     loaded = true,
     path = "/Users/diegoguisande/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/nvim-tree/nvim-tree.lua"
@@ -158,7 +175,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["obsidian.nvim"] = {
-    config = { "\27LJ\2\n<\0\1\4\0\4\0\a6\1\0\0009\1\1\0019\1\2\0015\3\3\0>\0\2\3B\1\2\1K\0\1\0\1\2\0\0\topen\rjobstart\afn\bvimù\2\1\0\5\0\n\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\0023\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\16daily_notes\1\0\2\rtemplate\24Daily Note Template\vfolder\21Areas/DailyNotes\20follow_url_func\0\15workspaces\1\0\4\16daily_notes\0\23new_notes_location\16current_dir\15workspaces\0\20follow_url_func\0\1\0\2\tname\rpersonal\tpatha/Users/diegoguisande/Library/Mobile Documents/iCloud~md~obsidian/Documents/Second Brain/PARA\nsetup\robsidian\frequire\0" },
+    config = { "\27LJ\2\n<\0\1\4\0\4\0\a6\1\0\0009\1\1\0019\1\2\0015\3\3\0>\0\2\3B\1\2\1K\0\1\0\1\2\0\0\topen\rjobstart\afn\bvimù\2\1\0\5\0\n\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\0023\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\16daily_notes\1\0\2\rtemplate\24Daily Note Template\vfolder\21Areas/DailyNotes\20follow_url_func\0\15workspaces\1\0\4\15workspaces\0\20follow_url_func\0\16daily_notes\0\23new_notes_location\16current_dir\1\0\2\tname\rpersonal\tpatha/Users/diegoguisande/Library/Mobile Documents/iCloud~md~obsidian/Documents/Second Brain/PARA\nsetup\robsidian\frequire\0" },
     loaded = true,
     path = "/Users/diegoguisande/.local/share/nvim/site/pack/packer/start/obsidian.nvim",
     url = "https://github.com/epwalsh/obsidian.nvim"
@@ -183,6 +200,11 @@ _G.packer_plugins = {
     path = "/Users/diegoguisande/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "/Users/diegoguisande/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
+  },
   undotree = {
     loaded = true,
     path = "/Users/diegoguisande/.local/share/nvim/site/pack/packer/start/undotree",
@@ -206,22 +228,30 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: ChatGPT.nvim
+time([[Config for ChatGPT.nvim]], true)
+try_loadstring("\27LJ\2\n^\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\16api_key_cmd\26pass show api/chatgpt\nsetup\fchatgpt\frequire\0", "config", "ChatGPT.nvim")
+time([[Config for ChatGPT.nvim]], false)
+-- Config for: nvim-surround
+time([[Config for nvim-surround]], true)
+try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
+time([[Config for nvim-surround]], false)
+-- Config for: conform.nvim
+time([[Config for conform.nvim]], true)
+try_loadstring("\27LJ\2\n±\5\0\0\5\0\"\0%6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\30\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\0035\4\n\0=\4\v\0035\4\f\0=\4\r\0035\4\14\0=\4\15\0035\4\16\0=\4\17\0035\4\18\0=\4\19\0035\4\20\0=\4\21\0035\4\22\0=\4\23\0035\4\24\0=\4\25\0035\4\26\0=\4\27\0035\4\28\0=\4\29\3=\3\31\0025\3 \0=\3!\2B\0\2\1K\0\1\0\19format_on_save\1\0\3\15lsp_format\rfallback\15timeout_ms\3ô\3\nasync\1\21formatters_by_ft\1\0\2\19format_on_save\0\21formatters_by_ft\0\blua\1\2\0\0\vstylua\fgraphql\1\2\0\0\rprettier\rmarkdown\1\2\0\0\rprettier\tyaml\1\2\0\0\rprettier\tjson\1\2\0\0\rprettier\thtml\1\2\0\0\rprettier\bcss\1\2\0\0\rprettier\vsvelte\1\2\0\0\rprettier\20typescriptreact\1\2\0\0\rprettier\20javascriptreact\1\2\0\0\rprettier\15typescript\1\2\0\0\rprettier\15javascript\1\2\0\0\rprettier\vpython\1\0\r\fgraphql\0\bcss\0\thtml\0\20typescriptreact\0\rmarkdown\0\tyaml\0\20javascriptreact\0\tjson\0\vpython\0\15javascript\0\vsvelte\0\blua\0\15typescript\0\1\2\0\0\rautopep8\nsetup\fconform\frequire\0", "config", "conform.nvim")
+time([[Config for conform.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
+time([[Config for nvim-tree.lua]], false)
 -- Config for: obsidian.nvim
 time([[Config for obsidian.nvim]], true)
-try_loadstring("\27LJ\2\n<\0\1\4\0\4\0\a6\1\0\0009\1\1\0019\1\2\0015\3\3\0>\0\2\3B\1\2\1K\0\1\0\1\2\0\0\topen\rjobstart\afn\bvimù\2\1\0\5\0\n\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\0023\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\16daily_notes\1\0\2\rtemplate\24Daily Note Template\vfolder\21Areas/DailyNotes\20follow_url_func\0\15workspaces\1\0\4\16daily_notes\0\23new_notes_location\16current_dir\15workspaces\0\20follow_url_func\0\1\0\2\tname\rpersonal\tpatha/Users/diegoguisande/Library/Mobile Documents/iCloud~md~obsidian/Documents/Second Brain/PARA\nsetup\robsidian\frequire\0", "config", "obsidian.nvim")
+try_loadstring("\27LJ\2\n<\0\1\4\0\4\0\a6\1\0\0009\1\1\0019\1\2\0015\3\3\0>\0\2\3B\1\2\1K\0\1\0\1\2\0\0\topen\rjobstart\afn\bvimù\2\1\0\5\0\n\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\0023\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\16daily_notes\1\0\2\rtemplate\24Daily Note Template\vfolder\21Areas/DailyNotes\20follow_url_func\0\15workspaces\1\0\4\15workspaces\0\20follow_url_func\0\16daily_notes\0\23new_notes_location\16current_dir\1\0\2\tname\rpersonal\tpatha/Users/diegoguisande/Library/Mobile Documents/iCloud~md~obsidian/Documents/Second Brain/PARA\nsetup\robsidian\frequire\0", "config", "obsidian.nvim")
 time([[Config for obsidian.nvim]], false)
 -- Config for: catppuccin
 time([[Config for catppuccin]], true)
 try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\27colorscheme catppuccin\bcmd\bvim\0", "config", "catppuccin")
 time([[Config for catppuccin]], false)
--- Config for: nvim-surround
-time([[Config for nvim-surround]], true)
-try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
-time([[Config for nvim-surround]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-try_loadstring("\27LJ\2\nw\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\16live_filter\1\0\1\16live_filter\0\1\0\1\24always_show_folders\1\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
-time([[Config for nvim-tree.lua]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

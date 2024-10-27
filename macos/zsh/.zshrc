@@ -207,3 +207,9 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# Created by `pipx` on 2024-09-05 17:21:43
+export PATH="$PATH:/Users/diegoguisande/.local/bin"
+
+GPG_TTY=$(tty)
+export GPG_TTY

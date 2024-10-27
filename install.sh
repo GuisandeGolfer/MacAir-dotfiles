@@ -51,6 +51,7 @@ if ! command -v stow &> /dev/null; then
     echo "stow is not installed, installing now"
     sudo apt install -y stow
 fi
+# TODO: add the same functionality but for Mac
 
 # Check if the directory exists
 if [[ ! -d "$DOT_FOLDERS_DIR" ]]; then
