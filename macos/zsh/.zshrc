@@ -213,3 +213,7 @@ export PATH="$PATH:/Users/diegoguisande/.local/bin"
 
 GPG_TTY=$(tty)
 export GPG_TTY
+
+source "$HOME/.cargo/env"
+
+export OPENAI_API_KEY="pass show api/chatgpt"
