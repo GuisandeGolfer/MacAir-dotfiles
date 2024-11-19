@@ -137,6 +137,9 @@ alias gitadd="git add ."
 alias gitcommit="git commit -m $1"
 alias push2gh="git push -u origin main"
 alias whisper="~/Desktop/PARA/Projects_1/AI-text/whisper.cpp/"
+alias sizesort="du -sh * | sort -h"
+
+alias showalias="'$HOME/show_alias.sh' | fzf"
 
 alias s="fd --type f --hidden --exclude .git | fzf-tmux --reverse -p | xargs -I {} nvim '{}'"
 alias smv="fd --type f --hidden --exclude .git | fzf-tmux --reverse -p | xargs -I {} mv '{}' $1"
@@ -216,4 +219,4 @@ export GPG_TTY
 
 source "$HOME/.cargo/env"
 
-export OPENAI_API_KEY="pass show api/chatgpt"
+export OPENAI_API_KEY="$(pass show api/chatgpt)"
