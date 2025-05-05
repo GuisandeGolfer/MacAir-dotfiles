@@ -12,7 +12,7 @@ export PATH="/usr/local/Cellar/mpv/0.38.0_2/bin:$PATH"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export NVM_DIR="$HOME/.nvim"
+export NVM_DIR="$HOME/.config/nvim"
 # [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh" # this loads nvm
 # [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvim" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" # this loads nvm bash_completion
 
@@ -116,61 +116,96 @@ if [[ -n $SSH_CONNECTION ]]; then
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 bindkey -v
 alias ll="ls -la"
-alias icloud="cd /Users/diegoguisande/Library/Mobile\ Documents/com~apple~CloudDocs"
-alias obsidian="cd /Users/diegoguisande/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Second\ Brain/PARA"
-alias karabiner="nvim /Users/diegoguisande/.config/karabiner/karabiner.json"
 
 function cdls() {
   builtin cd "$@" && ll
 }
+
 alias cd="cdls"
-alias ex="exit"
-alias la="ll -a"
+
+# Editing config files or file paths.
+alias karabiner="nvim /Users/diegoguisande/.config/karabiner/karabiner.json"
+alias icloud="cd /Users/diegoguisande/Library/Mobile\ Documents/com~apple~CloudDoc"
+alias obsidian="cd $HOME/Desktop/obsidian/"
 alias desk="cd ~/Desktop/"
 alias para="cd ~/Desktop/PARA/"
 alias newalias="nvim ~/.zshrc"
 alias dotfiles="nvim ~/.dotfiles"
+alias whisper="~/Desktop/PARA/Projects_1/AI-text/whisper.cpp/"
+# zk.config path: use with `bat`
+zkpath="$HOME/.dotfiles/macos/zk/.zk/config.toml"
+alias zkconfig="bat $zkpath"
+
+alias ex="exit"
+alias la="ll -a"
 alias src="source ~/.zshrc"
 alias cl="clear"
 alias gits="git status"
 alias gitadd="git add ."
-alias gitcommit="git commit -m $1"
+alias gitcommit="git commit -m \$1"
 alias push2gh="git push -u origin main"
-alias whisper="~/Desktop/PARA/Projects_1/AI-text/whisper.cpp/"
+alias pass="PASSWORD_STORE_ENABLE_EXTENSIONS=true PASSWORD_STORE_EXTENSIONS_DIR='/opt/homebrew/Cellar/pass-import/3.5' pass"
+
+
+# Useful/Helpful Shell Commands
 alias sizesort="du -sh * | sort -h"
-
 alias showalias="'$HOME/show_alias.sh' | fzf"
-
+alias old="history | fzf | cut -c8- | pbcop"
 alias s="fd --type f --hidden --exclude .git | fzf-tmux --reverse -p | xargs -I {} nvim '{}'"
-alias smv="fd --type f --hidden --exclude .git | fzf-tmux --reverse -p | xargs -I {} mv '{}' $1"
+alias smv="fd --type f --type d --hidden --exclude .git . | fzf-tmux --reverse -p | xargs -I {} mv '{}' \$1"
 alias datetime="$HOME/datetime.sh"
+alias hidden="ls -a | grep '^\.'"
+# alias fullgitpush="git add . && git commit -m \$1 && git push"
+# alias fullgitpush='f(){ git add . && git commit -m "$*" && git push; }; f'
 
+#
+##
+##
+# Add‑everything → commit → push (with upstream auto‑set on first push)
+function fullgitpush () {
+  local msg="$1"; shift                       # first arg = commit message
+  [[ -z "$msg" ]] && { echo "Usage: fullgitpush \"commit message\" [push args]"; return 1; }
+
+  git add -A                                  # stage all changes
+  if ! git diff --cached --quiet; then        # only commit when something changed
+    git commit -m "$msg" || return            # stop if a hook aborts commit
+  else
+    echo "Nothing to commit."
+  fi
+
+  # Push; if branch lacks an upstream, set it automatically
+  git push
+}
+
+#
+##
+##
+
+# Script Aliases
+alias stenog="python ~/Desktop/PARA/Projects_1/Programming/steganography/van-gonography/src/VanGonography.py" 
+
+# turn youtube url into a RSS feed link.
 function youtube_rss() {
-    youtube_url=$1
+    youtube_url=\$1
     echo "Processing YouTube URL: $youtube_url"
     # Add your logic here to process the YouTube URL
     curl -s "$youtube_url" | xmllint --html --xpath "string(//link[@title='RSS']/@href)" - 2>/dev/null
 }
-
 alias rss="youtube_rss"
 
 function gptsum_func() {
     source ~/Desktop/PARA/Projects_1/youtube_summary_py/venv/bin/activate
     python3 ~/Desktop/PARA/Projects_1/youtube_summary_py/main.py
 }
-
 alias gptsum="gptsum_func"
-alias hidden="ls -a | grep '^\.'"
-alias pass="PASSWORD_STORE_ENABLE_EXTENSIONS=true PASSWORD_STORE_EXTENSIONS_DIR='/opt/homebrew/Cellar/pass-import/3.5' pass"
 
-# Script Aliases
-alias stenog="python ~/Desktop/PARA/Projects_1/Programming/steganography/van-gonography/src/VanGonography.py" 
+
 # ENV variables for cs50 c compilation on Mac M1
 # CC="clang"
 # CFLAGS="-ferror-limit=1 -gdwarf-4 -ggdb3 -O0 -std=c11 -Wall -Werror -Wextra -Wno-gnu-folding-constant -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wshadow"
 # LDLIBS="-lcrypt -lcs50 -lm"
 
-alias nhelp="nvim $HOME/.dotfiles/nvim/.config/nvim/lua/diegog/remap.lua"
+#alias nhelp="nvim $HOME/.dotfiles/nvim/.config/nvim/lua/diegog/remap.lua"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -220,3 +255,5 @@ export GPG_TTY
 source "$HOME/.cargo/env"
 
 export OPENAI_API_KEY="$(pass show api/chatgpt)"
+
+alias vim="nvim"
