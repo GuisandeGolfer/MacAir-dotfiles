@@ -54,10 +54,9 @@ return {
       min_chars = 2, -- Trigger completion after 2 characters
     },
 
-    -- Move these here, NOT inside mappings!!
-    wiki_link_func = function(opts)
-      return require("obsidian.util").wiki_link_id_prefix(opts)
-    end,
+    -- wiki_link_func = function(opts)
+    --   return require("obsidian.util").wiki_link_id_prefix(opts)
+    -- end,
 
     markdown_link_func = function(opts)
       return require("obsidian.util").markdown_link(opts)
