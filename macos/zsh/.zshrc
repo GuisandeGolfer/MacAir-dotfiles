@@ -149,12 +149,13 @@ alias pass="PASSWORD_STORE_ENABLE_EXTENSIONS=true PASSWORD_STORE_EXTENSIONS_DIR=
 
 # Useful/Helpful Shell Commands
 alias sizesort="du -sh * | sort -h"
-alias showalias="'$HOME/show_alias.sh' | fzf"
-alias old="history | fzf | cut -c8- | pbcop"
+alias showalias="'$HOME/show_alias.sh' | fzf | pbcopy"
+alias old="history | fzf | cut -c8- | pbcopy"
 alias s="fd --type f --hidden --exclude .git | fzf-tmux --reverse -p | xargs -I {} nvim '{}'"
 alias smv="fd --type f --type d --hidden --exclude .git . | fzf-tmux --reverse -p | xargs -I {} mv '{}' \$1"
 alias datetime="$HOME/datetime.sh"
 alias hidden="ls -a | grep '^\.'"
+alias addopenai='export OPENAI_API_KEY="$(pass show api/chatgpt)"'
 # alias fullgitpush="git add . && git commit -m \$1 && git push"
 # alias fullgitpush='f(){ git add . && git commit -m "$*" && git push; }; f'
 
@@ -194,11 +195,18 @@ function youtube_rss() {
 alias rss="youtube_rss"
 
 function gptsum_func() {
-    source ~/Desktop/PARA/Projects_1/youtube_summary_py/venv/bin/activate
-    python3 ~/Desktop/PARA/Projects_1/youtube_summary_py/main.py
+    source $HOME/Desktop/PARA/Projects_1/youtube_summary_py/.venv/bin/activate
+    uv run python $HOME/Desktop/PARA/Projects_1/youtube_summary_py/main.py
 }
 alias gptsum="gptsum_func"
 
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
 
 # ENV variables for cs50 c compilation on Mac M1
 # CC="clang"
@@ -254,6 +262,5 @@ export GPG_TTY
 
 source "$HOME/.cargo/env"
 
-export OPENAI_API_KEY="$(pass show api/chatgpt)"
 
 alias vim="nvim"

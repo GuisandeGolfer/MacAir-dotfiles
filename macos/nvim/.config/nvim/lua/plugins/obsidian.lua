@@ -34,9 +34,10 @@ return {
 
     daily_notes = {
       folder = "2_Areas/DailyNotes",
-      date_format = "%Y-%m-%d",
+      date_format = "%m-%d-%Y",
       alias_format = "%B %-d, %Y",
       default_tags = { "daily-notes" },
+      template = "3_Resources/Templates/daily-note.md",
     },
 
     picker = {
@@ -68,12 +69,12 @@ return {
 
     templates = {
       folder = "3_Resources/Templates",
-      date_format = "%Y-%m-%d",
+      date_format = "%m-%d-%Y",
       time_format = "%H:%M",
       substitutions = {
         --template for substitutions
-        supfoo = function()
-          return "sup foo"
+        today = function()
+          return os.date("%Y-%m-%d", os.time())
         end,
       },
     },
