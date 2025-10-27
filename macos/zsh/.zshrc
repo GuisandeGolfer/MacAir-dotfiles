@@ -158,6 +158,11 @@ alias hidden="ls -a | grep '^\.'"
 alias addopenai='export OPENAI_API_KEY="$(pass show api/chatgpt)"'
 # alias fullgitpush="git add . && git commit -m \$1 && git push"
 # alias fullgitpush='f(){ git add . && git commit -m "$*" && git push; }; f'
+#
+function incognito() {
+  open -a "Google Chrome" --new --args --incognito "$1"
+}
+
 
 #
 ##
@@ -262,5 +267,7 @@ export GPG_TTY
 
 source "$HOME/.cargo/env"
 
+eval "$(starship init zsh)"
 
-alias vim="nvim"
+# Added by Windsurf
+export PATH="/Users/diegoguisande/.codeium/windsurf/bin:$PATH"
